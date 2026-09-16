@@ -1,0 +1,231 @@
+/*
+This is a custom skin for Gamepad Viewer. Apply it by using the css URL parameter in the Gamepad Viewer URL:
+https://gamepadviewer.com/?p=1&css=https://link.to/custom/skin.css
+
+This skin is a slight modification of KernelZechs's design for the same controller made for Open Joystick Display.
+I do not in any way take credit for the base controller image.
+This is simply a port to Gamepad Viewer, with a few other minor changes such as corrected trigger text, centered house window,
+and a player number.
+*/
+
+/*BEGIN Nintendo Switch Pro Controller (Zelda) Styling*/
+/* This class defines the base attributes of the skin */
+.controller.custom {
+    background: url(https://i.imgur.com/yZd04NY.png);
+    width: 550px;
+    height: 418px;
+}
+.custom.disconnected { /* This class shows an image when the controller is disconnected */
+    background: url(https://i.imgur.com/rCjW4u4.png);
+}
+/* This hides the controller's buttons when disconnected so only the background image remains */
+.custom.disconnected div {
+    display: none;
+}
+.custom .triggers { /* The triggers are housed inside a div, so this sizes the div properly and positions it */
+    width: 161px;
+    height: 24px;
+    position: absolute;
+    left: 191px;
+}
+.custom .trigger { /* These are the actual triggers themselves */
+    width: 61px;
+    height: 24px;
+    opacity: 0;
+}
+/* The left and right classes below are used to position the triggers
+within the div they're contained in. Since their positions are relative
+to the size of the parent element we simply resize the parent element
+above to achieve the desired position. */
+.custom .trigger.left {
+    float: left;
+    background: url(https://i.imgur.com/T33aePj.png);
+}
+.custom .trigger.right {
+    float: right;
+    background: url(https://i.imgur.com/8O9I4Ak.png);
+}
+/* The bumpers follow the same methodology as the triggers in terms of
+placement */
+.custom .bumpers {
+    position: absolute;
+    width: 422px;
+    height: 45px;
+    left: 63px;
+    top: 21px;
+}
+.custom .bumper {
+    width: 131px;
+    height: 45px;
+    opacity: 0;
+}
+.custom .bumper.pressed {
+    opacity: 1;
+}
+.custom .bumper.left {
+    float: left;
+    background: url(https://i.imgur.com/RXx9H6P.png);
+}
+.custom .bumper.right {
+    float: right;
+    background: url(https://i.imgur.com/9BG0Qe0.png);
+}
+.custom .quadrant {
+    position: absolute;
+    background: url(https://i.imgur.com/FvUOr69.png);
+    width: 36px;
+    height: 6px;
+    left: 257px;
+    top: 293px;
+}
+/* Since tha player indicator is just a CSS sprite, we change the
+position of the background to match the player number.
+NOTE: Player ordering starts at 0, so p0 = Player 1 */
+.custom .p0 {
+    background-position: 0px 0px;
+}
+.custom .p1 {
+    background-position: 0px -6px;
+}
+.custom .p2 {
+    background-position: 0px -12px;
+}
+.custom .p3 {
+    background-position: 0px -18px;
+}
+/* This is to size and position the containing div for the
++ and - buttons. */
+.custom .arrows {
+    position: absolute;
+    width: 160px;
+    height: 22px;
+    left: 195px;
+    top: 81px;
+}
+/* Setting the size and CSS sprite for the + and - buttons */
+.custom .back, .custom .start {
+    background: url(https://i.imgur.com/1J6Yhaw.png);
+    width: 24px;
+    height: 22px;
+}
+.custom .back.pressed, .custom .start.pressed {
+    margin-top: 2px;
+    background-position-y: -22px;
+}
+.custom .back {
+    float: left;
+}
+.custom .start {
+    float: right;
+    background-position: -24px 0px;
+}
+/* Positioning and size of the container for the face buttons */
+.custom .abxy {
+    position: absolute;
+    width: 127px;
+    height: 114px;
+    left: 356px;
+    top: 72px;
+}
+/* Base class used to simplify the sprite mapping */
+.custom .button {
+    position: absolute;
+    width: 42px;
+    height: 40px;
+    background: url(https://i.imgur.com/CLa3u8C.png);
+}
+.custom .button.pressed {
+    margin-top: 4px;
+    background-position-y: -40px;
+}
+.custom .a {
+    background-position: 0px 0px;
+    left: 85px;
+    top: 38px;
+}
+.custom .b {
+    background-position: -42px 0px;
+    left: 42px;
+    top: 74px;
+}
+.custom .x {
+    background-position: -126px 0px;
+    top: 37px;
+}
+.custom .y {
+    background-position: -84px 0px;
+    left: 42px;
+}
+/* Analog sticks follow the same principles as the triggers in terms of positioning.
+Note that the rotation of the sticks is hard-coded with JavaScript, so it applies
+the CSS inline. */
+.custom .sticks {
+    position: absolute;
+    width: 298px;
+    height: 152px;
+    left: 86px;
+    top: 94px;
+}
+.custom .stick {
+    position: absolute;
+    background: url(https://i.imgur.com/N4Xl1d3.png);
+    width: 77px;
+    height: 77px;
+}
+.custom .stick.pressed {
+    background-position-x: -77px;
+}
+.custom .stick.left {
+    left: 0px;
+    top: 0px;
+}
+.custom .stick.right {
+    left: 221.5px;
+    top: 75.5px;
+    right: 0px;
+    bottom: 0px;
+}
+/* D-pad positioning and sizing */
+.custom .dpad {
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    left: 151px;
+    top: 168px;
+}
+.custom .face {
+    background: url(https://i.imgur.com/T4y0xGA.png);
+    position: absolute;
+}
+.custom .face.up, .custom .face.down {
+    width: 27px;
+    height: 39px;
+}
+.custom .face.left, .custom .face.right {
+    width: 39px;
+    height: 27px;
+}
+.custom .face.up {
+    left: 26px;
+    top: 0px;
+    background-position: 0px 0px;
+}
+.custom .face.down {
+    left: 26px;
+    bottom: 0px;
+    background-position: -27px 0px;
+}
+.custom .face.left {
+    left: 1px;
+    top: 26px;
+    background-position: -54px 0px;
+}
+.custom .face.right {
+    right: 1px;
+    top: 26px;
+    background-position: -93px 0px;
+}
+.custom .face.pressed {
+    background-position-y: 39px;
+}
+/*END Nintendo Switch Pro Controller (Zelda) Styling*/

@@ -78,7 +78,7 @@ placement */
     left: 257px;
     top: 293px;
 }
-/* Since tha player indicator is just a CSS sprite, we change the
+/* Since the player indicator is just a CSS sprite, we change the
 position of the background to match the player number.
 NOTE: Player ordering starts at 0, so p0 = Player 1 */
 .custom .p0 {
